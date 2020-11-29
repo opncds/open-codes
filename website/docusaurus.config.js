@@ -1,9 +1,9 @@
 module.exports = {
     title: 'OpenCodes',
     tagline: 'Відкриті будівельні норми',
-    url: 'https://opencodes.info',
-    baseUrl: '/',
-    onBrokenLinks: 'throw',
+    url: 'https://opencodes.netlify.com', // Url to your site with no trailing slash
+    baseUrl: '/', // Base directory of your site relative to your repo
+    onBrokenLinks: 'ignore',
     favicon: 'img/favicon.png',
     organizationName: 'opncds', // Usually your GitHub org/user name.
     projectName: 'open-codes', // Usually your repo name.
