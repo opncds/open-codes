@@ -8,6 +8,13 @@ module.exports = {
     organizationName: 'opncds', // Usually your GitHub org/user name.
     projectName: 'open-codes', // Usually your repo name.
     themeConfig: {
+        algolia: {
+            apiKey: 'f8d32aec5373965abca39ae4ae0e96fc',
+            indexName: 'opencodes',
+            contextualSearch: false,
+            //appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
+            //algoliaOptions: {}, // Optional, if provided by Algolia
+          },
         navbar: {
             title: 'Opencodes',
             logo: {
