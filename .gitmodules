@@ -1,3 +1,6 @@
 [submodule "website/docs/dbn-v-1-1-7"]
 	path = website/docs/dbn-v-1-1-7
 	url = https://github.com/opncds/dbn-v-1-1-7.git
+[submodule "website/docs/dbn-a-2-2-3"]
+	path = website/docs/dbn-a-2-2-3
+	url = https://github.com/opncds/dbn-a-2-2-3.git
