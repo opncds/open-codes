@@ -1,5 +1,6 @@
 module.exports = {
   docs: [
+    "open-codes/index",
     {
       type: "category",
       label: "ДБН A.2.2-3 Склад та зміст проектної документації на будівництво",
@@ -37,7 +38,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "ДБН В.1.1-7:2016 Пожежна безпека об’єктів будівництва",
+      label: "ДБН В.1.1-7 Пожежна безпека об’єктів будівництва",
       collapsed: true,
       items: [
         "dbn-v-1-1-7/doc/index",
