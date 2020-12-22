@@ -8,6 +8,10 @@ module.exports = {
     organizationName: 'opncds', // Usually your GitHub org/user name.
     projectName: 'open-codes', // Usually your repo name.
     themeConfig: {
+        colorMode: {
+          defaultMode: 'dark',
+          disableSwitch: false
+        },
         algolia: {
             apiKey: 'f8d32aec5373965abca39ae4ae0e96fc',
             indexName: 'opencodes',
@@ -17,6 +21,7 @@ module.exports = {
           },
         navbar: {
             title: 'Opencodes',
+            // hideOnScroll: true,
             logo: {
                 alt: 'My Site Logo',
                 src: 'img/logo.png',

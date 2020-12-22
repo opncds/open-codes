@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -7,123 +7,122 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Waypoint } from 'react-waypoint';
+import Hero from './Home/Hero'
+import Story from './Home/Story'
+import CST from './Home/CST'
+
+const ScrollPage = ({pages}) => {
+  const [showStatic, setShowStatic] = useState(true);
+  const [entered, setEntered] = useState(0)
+  const [left, setLeft] = useState(1)
+  const [currIndex, setIndex] = useState(0)
+
+  const handleEnter = (index) => {
+    console.log('entered', index, 'prevEntered', entered, 'left', left, 'current', currIndex)
+    if(index<left || index<currIndex){
+      console.log('setIndex on enter', index)
+      setIndex(index);
+    }
+    // if(index<left){
+    //   setIndex(index+1);
+    // }
+    setEntered(index)
+    // setShowStatic(true);
+  }
+
+  const handleLeave = (index) => {
+    console.log('left', index, 'prevLeft', left, 'entered', entered, 'current', currIndex)
+    if(index<entered || (index===entered && index===currIndex) ){
+      console.log('setIndex on leave', entered)
+      setIndex(index+1); //0,2,0,0 - stay at 0 when 1
+    }
+    setLeft(index) ///1,1,1,0 - jumps to 2 when 0
+  }
+  
+  const handlePositionChange = (e,active)=>{
+    // if(active){
+      console.log('change',e,active)
+
+    // }
+  }
+
+  useEffect(()=>{console.log(currIndex)},[currIndex])
+  // const reverseIndex = pages.length - currIndex;
+
+
+  return (
+      <>
+          <div key={0} style={{zIndex:0}}>{
+            pages.map((content, index) => {
+              const reverseIndex = pages.length - index;
+              const isCurrent = index === currIndex+1;
+              const staticDivStyle = {
+                position: 'fixed',
+                // height: '100vh',
+                width: '100%',
+                zIndex: reverseIndex,
+                // opacity: showStatic ? 0.6 : 0,
+                transition: 'opacity ease-out 0.5s',
+                display: isCurrent ? 'block' : 'none'
+              }
+        
+              return (
+                <div key={index+pages.length}  style={staticDivStyle}>{content}</div>
+              )})
+          }</div>
+          <div key={1} style={{zIndex:1}}>{
+            pages.map((content, index) => {
+              const reverseIndex = pages.length - index;
+              const isCurrent = index === currIndex;
+              const alldivStyle = {
+                display: 'block',
+                visibility: isCurrent ? 'visible' : 'hidden',
+                zIndex: reverseIndex,
+                position: 'relative',
+                // height: '100vh',
+                width: '100%',
+                overflow: 'auto',
+                backgroundColor: 'rgb(54, 62, 82)'
+              };
+        
+              return (<>
+                <Waypoint key={index} onPositionChange={(e)=>handlePositionChange(e,isCurrent)} onEnter={()=>handleEnter(index)} onLeave={()=>handleLeave(index)}>
+                  <div key={index} style={alldivStyle}>{content}</div>
+                </Waypoint>
+                {/* {isCurrent && <div className={'black'+index} key={index+(pages.length*2)} style={{width: '100%', height: '100vh', backgroundColor: 'black', zIndex: 10}}/>} */}
+              </>)})
+          }</div>
+      </>
+  )
+}
 
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const parallax = useRef()
   const desktop = useMediaQuery('(min-width:900px)');
+  const [page, setPage] = useState(0)
+  const [position, setPosition] = useState(0)
+  const parallax = useRef()
+
+  // useEffect(()=>{
+  //   window.addEventListener('scroll', e=>console.log(window.pageYOffset))
+  // })
+
 
   return (
     <Layout
-    className='noscrollbar'
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <main style={{ backgroundColor:'#363e52' }} className='noscrollbar'>
-        <Parallax ref={parallax} className='noscrollbar' pages={7} style={{ backgroundColor:'#363e52' }}>
-          <ParallaxLayer 
-          className='noscrollbar'
-            offset={0} 
-            speed={0} 
-            style={{ backgroundColor:'#363e52', zIndex:0, backgroundSize: 'cover' }}
-          ></ParallaxLayer>
-
-          <ParallaxLayer 
-          className='noscrollbar'
-            offset={0} 
-            speed={1} 
-            onClick={() => parallax.scrollTo(1)}
-            style={{
-              backgroundImage: "url(https://d2kq0urxkarztv.cloudfront.net/5443d73367f3ed093ea65c73/1806316/upload-1b9524a1-9c21-4c44-b020-1bba0b4aa065.jpg?w=3617&e=webp)" ,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          >
-
-          </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.5} className='noscrollbar'>
-            <div 
-              className="text-viewer" 
-              style={{
-                maxWidth:'90%',
-                width:'fit-content',
-                paddingLeft:'10%',
-                paddingTop: '30vh'
-              }}
-            >
-              <p style={{lineHeight:"45px"}}>
-                <span style={{
-                  fontSize:"3.5rem",
-                  fontSize: desktop?"6vw":"3.5rem",
-                  fontWeight: 600,
-                  fontStyle: 'normal',
-                  textDecoration: 'none', 
-                  textTransform: 'none',
-                  display:'block'
-                }}>
-                  Open Codes
-                </span>
-              </p>
-              <p style={{lineHeight:desktop?"25px":"0px"}}>
-                <span 
-                  style={{
-                    fontSize:'0.8rem',
-                    fontSize: desktop?"1.35vw":"0.8rem",
-                    fontWeight:600,
-                    letterSpacing:'0.4px',
-                    textDecoration:'none',
-                    color:'rgba(147, 165, 200, 1)',
-                    display:'block',
-                    float:'right'
-                  }}
-                >
-                  Відкриті Будівельні Норми
-                </span>
-              </p>
-              <p style={{paddingTop:'5vw'}}>
-                <span 
-                  style={{
-                    fontSize:'1.4rem',
-                    fontSize: desktop?"1.5vw":"1rem",
-                    fontWeight:600,
-                    letterSpacing:'0.4px',
-                    textDecoration:'none',
-                    display:'block',
-                  }}
-                >
-                  Онлайн платформа для зручної 
-                </span>
-                <span 
-                  style={{
-                    fontSize:'1.4rem',
-                    fontSize: desktop?"1.5vw":"1rem",
-                    fontWeight:600,
-                    letterSpacing:'0.4px',
-                    textDecoration:'none',
-                    display:'block',
-                  }}
-                >
-                  роботи з будівельними нормами
-                </span>
-                <span 
-                  style={{
-                    width:'10vw',
-                    paddingTop:'1rem',
-                    display:'block',
-                  }}
-                >
-                  <img 
-                    srcset="https://d2kq0urxkarztv.cloudfront.net/5443d73367f3ed093ea65c73/1806316/upload-adae9722-1bfa-4b52-a4e9-6b2eaf5989af.png?w=285&amp;e=webp&amp;nll=true 2x, https://d2kq0urxkarztv.cloudfront.net/5443d73367f3ed093ea65c73/1806316/upload-adae9722-1bfa-4b52-a4e9-6b2eaf5989af.png?e=webp&amp;nll=true 3x" 
-                    src="https://d2kq0urxkarztv.cloudfront.net/5443d73367f3ed093ea65c73/1806316/upload-adae9722-1bfa-4b52-a4e9-6b2eaf5989af.png?w=285&amp;e=webp&amp;nll=true" 
-                    className="viewable" 
-                    style={{opacity: 1}}
-                  />
-                </span>
-              </p>
-            </div>
-          </ParallaxLayer>
-
-        </Parallax>
+      <main 
+        style={{ backgroundColor:'#363e52', zIndex:-5, backgroundSize: 'cover' }}
+      >
+        <ScrollPage pages={[
+          <Hero />,
+          <Story />,
+          <CST />
+        ]} />
+                
       </main>
     </Layout>
   );

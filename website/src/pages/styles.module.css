@@ -4,15 +4,15 @@ html *
 {
    color: #fff;
    font-family: Montserrat, sans-serif !important;
-
+   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   overflow: scroll;
   overflow-x: hidden;
-  width: 0px;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
-}
+  width: 0px;  
+  background: transparent;  
+} */
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
@@ -30,6 +30,7 @@ html *
         padding: 2rem;
     }
 }
+
 
 .buttons {
     display: flex;
