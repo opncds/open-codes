@@ -1,6 +1,18 @@
 /* stylelint-disable docusaurus/copyright-header */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+html *
+{
+   color: #fff;
+   font-family: Montserrat, sans-serif !important;
 
+}
 
+::-webkit-scrollbar {
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
