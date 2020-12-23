@@ -37,7 +37,7 @@ export default ()=>{
           width:'fit-content',
           maxWidth:desktop?'50%':'100%',
           paddingRight:'10vw',
-          paddingRLeft: vertical?'10vw':0,
+          paddingLeft: vertical?'10vw':0,
           paddingTop: desktop?'25vh':'15vh',
           paddingBottom: desktop?'25vh':'15vh'
         }}
