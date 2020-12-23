@@ -9,8 +9,9 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Waypoint } from 'react-waypoint';
 import Hero from './Home/Hero'
-import Story from './Home/Story'
+import Problem from './Home/Problem'
 import CST from './Home/CST'
+import Context from './Home/Context'
 
 const ScrollPage = ({pages}) => {
   const [showStatic, setShowStatic] = useState(true);
@@ -119,7 +120,8 @@ function Home() {
       >
         <ScrollPage pages={[
           <Hero />,
-          <Story />,
+          <Problem />,
+          <Context />,
           <CST />
         ]} />
                 

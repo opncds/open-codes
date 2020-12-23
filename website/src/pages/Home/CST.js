@@ -59,7 +59,7 @@ export default ()=>{
           paddingLeft:'10%',
           display:'inline',
           width: '50vw',
-          height: '20vw'
+          height: 'fit-content'
         }}
       >
         <p style={{maxWidth: desktop?'25vw':'400px'}}>
