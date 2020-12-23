@@ -34,7 +34,7 @@ export default ()=>{
     style={{
       backgroundColor:"white", 
       width:'100%', 
-      height:'fit-content', 
+      height:desktop?'fit-content':'80vh', 
       display:'flex',
       justifyContent: 'center',
       alignItems: 'center',

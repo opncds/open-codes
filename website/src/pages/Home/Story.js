@@ -12,13 +12,14 @@ export default ()=>{
           maxWidth:'90%',
           width:'fit-content',
           paddingLeft:'10%',
-          paddingTop: '30vh'
+          paddingTop: desktop?'30vh':'15vh',
+          paddingBottom: desktop?'30vh':'15vh'
         }}
       >
         <p style={{lineHeight:"45px"}}>
           <span style={{
             fontSize:"3.5rem",
-            fontSize: desktop?"6vw":"3.5rem",
+            fontSize: desktop?"6vw":"3rem",
             fontWeight: 600,
             fontStyle: 'normal',
             textDecoration: 'none', 
@@ -37,7 +38,7 @@ export default ()=>{
               letterSpacing:'0.4px',
               textDecoration:'none',
               display:'block',
-              maxWidth:'50%'
+              maxWidth:desktop?'50%':'100%'
             }}
           >
             Будівельна галузь має одні з найнижчих 
