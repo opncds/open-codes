@@ -87,7 +87,7 @@ const ScrollPage = ({pages}) => {
               };
         
               return (<>
-                <Waypoint key={index} onPositionChange={(e)=>handlePositionChange(e,isCurrent)} onEnter={()=>handleEnter(index)} onLeave={()=>handleLeave(index)}>
+                <Waypoint topOffset={60} bottomOffset={60} key={index} onPositionChange={(e)=>handlePositionChange(e,isCurrent)} onEnter={()=>handleEnter(index)} onLeave={()=>handleLeave(index)}>
                   <div key={index} style={alldivStyle}>{content}</div>
                 </Waypoint>
                 {/* {isCurrent && <div className={'black'+index} key={index+(pages.length*2)} style={{width: '100%', height: '100vh', backgroundColor: 'black', zIndex: 10}}/>} */}

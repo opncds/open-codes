@@ -5,7 +5,17 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   spinningLogo: {
-    animation: 'spin 2s linear infinite'  
+    animation: '$spin 15s linear infinite',
+  },
+  scaleLogo: {
+    width:'fit-content',
+    height:'fit-content',
+    display: 'block',
+    transform: "scale(1)",
+    transition: 'transform 0.3s linear;',
+    '&:hover': {
+      transform: "scale(1.1)"
+    }
   },
   "@keyframes spin": {
     "0%": {
@@ -20,32 +30,43 @@ const useStyles = makeStyles(theme => ({
 export default ()=>{
   const desktop = useMediaQuery('(min-width:900px)');
   const classes = useStyles()
-  return <div style={{backgroundColor:"white", width:'100%', height:'fit-content'}}>
+  return <div 
+    style={{
+      backgroundColor:"white", 
+      width:'100%', 
+      height:'fit-content', 
+      display:'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingBottom: '5vw',
+      paddingTop: '5vw',
+
+    }}>
       <div
         style={{
           maxWidth:'30%',
-          width:'fit-content',
+          width:'30vw',
+          height:'20vw',
           paddingLeft:'10%',
-          paddingTop: '30vh',
         }}
       >
-        <img className={classes.spinningLogo} src="static/img/upload-b6002df0-62cc-49c5-98ec-eb064d633ed5.jpg" />
+        <a href="http://spatialtech.info/" className={classes.scaleLogo}>
+          <img className={classes.spinningLogo} src="static/img/upload-b6002df0-62cc-49c5-98ec-eb064d633ed5.jpg" />
+        </a>
       </div>
       <div 
         style={{
-          maxWidth:'40%',
-          width:'fit-content',
           paddingLeft:'10%',
-          paddingRight: '10%',
-          paddingTop: '30vh',
-          display:'inline'
+          display:'inline',
+          width: '50vw',
+          height: '20vw'
         }}
       >
-        <p style={{paddingTop:'5vw', maxWidth:'40%'}}>
+        <p style={{maxWidth: desktop?'25vw':'400px'}}>
           <span 
             style={{
               fontSize:'1.4rem',
-              fontSize: desktop?"1.5vw":"1rem",
+              fontSize: desktop?"1.2vw":"2vw",
               fontWeight:600,
               letterSpacing:'0.4px',
               textDecoration:'none',
