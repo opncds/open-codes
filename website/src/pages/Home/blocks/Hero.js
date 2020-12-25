@@ -5,13 +5,11 @@ import heroImage from './../../../assets/img/ipad2.png'
 import heroImageWhite from './../../../assets/img/ipad_white.png'
 
 import emojiImage from './../../../assets/img/emoji.png'
-import useThemeContext from '@theme/hooks/useThemeContext';
 
-export default ({ active, isCurrent })=>{
+export default ({ active, isCurrent, isDarkTheme })=>{
   const desktop = useMediaQuery('(min-width:900px)');
   const ref = useRef()
   const [vertical, setVertical] = useState(false);
-  const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
 
   useEffect(()=>{
     setVertical(window.innerWidth<window.innerHeight)
