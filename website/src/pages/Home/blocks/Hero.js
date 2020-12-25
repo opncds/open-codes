@@ -1,11 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Spring } from 'react-spring/renderprops'
 
 export default ({ active, isCurrent })=>{
   const desktop = useMediaQuery('(min-width:900px)');
-  const vertical = window.innerHeight>window.innerWidth;
   const ref = useRef()
+  const [vertical, setVertical] = useState(false);
+
+  useEffect(()=>{
+    setVertical(window.innerWidth<window.innerHeight)
+  })
 
   const content = (props) => (
      <div

@@ -28,7 +28,7 @@ export default ({ children }) => {
   return (
       <>
           <div key={0} style={{zIndex:0}}>{
-            children.map((content, index) => {
+            children?.map((content, index) => {
               const reverseIndex = children.length - index;
               const isCurrent = index === currIndex+1;
               const staticDivStyle = {
@@ -46,7 +46,7 @@ export default ({ children }) => {
               )})
           }</div>
           <div key={1} style={{zIndex:1, paddingBottom:'4rem'}}>{
-            children.map((content, index) => {
+            children?.map((content, index) => {
               const isCurrent = index === currIndex;
               const alldivStyle = {
                 display: 'block',

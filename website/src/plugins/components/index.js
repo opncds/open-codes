@@ -34,7 +34,7 @@ function listPaths(type) {
 
     let experimentalPaths = components
         .filter(c => c.status == "experimental")
-        .map(c => `components/${type}/${c.name}`);
+        ?.map(c => `components/${type}/${c.name}`);
 
     if (experimentalPaths.length > 0) {
         paths.push({
@@ -46,7 +46,7 @@ function listPaths(type) {
 
     let deprecatedPaths = components
         .filter(c => c.status == "deprecated")
-        .map(c => `components/${type}/${c.name}`);
+        ?.map(c => `components/${type}/${c.name}`);
 
     if (deprecatedPaths.length > 0) {
         paths.push({

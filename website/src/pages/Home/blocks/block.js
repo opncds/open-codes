@@ -18,11 +18,15 @@ const useStyles = makeStyles(theme => ({
 
 export default ({ text, text2, image, alignRight, active, isCurrent, visible })=>{
   const desktop = useMediaQuery('(min-width:900px)');
-  const vertical = window.innerWidth<window.innerHeight;
+  const [vertical, setVertical] = useState(false);
   const classes = useStyles()
   const [mouseOver, setMouseOver] = useState(false)
   const [inCenter, setInCenter] = useState(false)
   const ref = useRef()
+
+  useEffect(()=>{
+    setVertical(window.innerWidth<window.innerHeight)
+  })
 
   const onScroll=()=>{
     if( active && ref.current){
@@ -69,7 +73,7 @@ export default ({ text, text2, image, alignRight, active, isCurrent, visible })=
           paddingBottom: desktop?'5vw':'10vw'
         }}
       >
-        {text({vertical, desktop, classes})}
+        {typeof(text)==='function' && text({vertical, desktop, classes})}
       </div>
       {text2 && <div 
         className="text-viewer" 
