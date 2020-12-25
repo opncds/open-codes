@@ -53,7 +53,7 @@ const Text = ({desktop, vertical, classes})=><>
 </>
 
 const Text2 = ({desktop, vertical, classes})=><>
-  <p style={{lineHeight:"45px"}}>
+  {!vertical && <p style={{lineHeight:"45px"}}>
     <span style={{
       fontSize:"3.5rem",
       fontSize: desktop?"5vw":"2.5rem",
@@ -66,8 +66,8 @@ const Text2 = ({desktop, vertical, classes})=><>
       <br/>
       <br/>
     </span>
-  </p>
-  <p style={{paddingTop:'5vw', lineHeight: desktop?"1.8vw":"1rem"}}>
+  </p>}
+  <p style={{paddingTop: vertical?'0':'5vw', lineHeight: desktop?"1.8vw":"1rem"}}>
     <span 
       style={{
         fontSize:'1.4rem',

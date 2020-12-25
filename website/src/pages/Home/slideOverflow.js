@@ -45,7 +45,7 @@ export default ({ children }) => {
                 </div>
               )})
           }</div>
-          <div key={1} style={{zIndex:1}}>{
+          <div key={1} style={{zIndex:1, paddingBottom:'4rem'}}>{
             children.map((content, index) => {
               const isCurrent = index === currIndex;
               const alldivStyle = {

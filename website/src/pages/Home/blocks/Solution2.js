@@ -62,23 +62,26 @@ export default (props)=>{
           style={{
             position:'relative', 
             minWidth:'50vw', 
-            minHeight: styles.vertical?'30vh':'100vh',
+            // minHeight: styles.vertical?'30vh':'100vh',
             transform: styles.vertical?'translate(0px,0px)':'translate(5vw,0px)',
             // overflow:'hidden',
-            backgroundImage: 'url(static/img/upload-d615192a-93cf-42a7-b8ec-beaa2d331b4e.png?w=3617&e=webp)',
-            backgroundSize: styles.vertical?'120%':'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: styles.vertical?'center':'50% 50%',
+            // backgroundImage: 'url(static/img/upload-d615192a-93cf-42a7-b8ec-beaa2d331b4e.png?w=3617&e=webp)',
+            // backgroundSize: styles.vertical?'120%':'cover',
+            // backgroundRepeat: 'no-repeat',
+            // backgroundPosition: styles.vertical?'center':'50% 50%',
             display: "flex", // make us of Flexbox
             alignItems: "center",
-            margin: styles.vertical?"10vw -10vw":'unset'
+            margin: styles.vertical?"0 -10vw":'unset'
 
           }}
         >
+          <animated.img 
+            style={{width: '100%'}} 
+            src="static/img/upload-cf6d331a-945e-42cf-86ed-33c195f23ac3_s.png" />
           <p 
             style={{
               position:'absolute', 
-              bottom:styles.vertical?'-4rem':'-2vw', 
+              bottom:styles.vertical?'0rem':'2vw', 
               left:'auto', 
               right: 'auto',
               width: '100%',
@@ -89,7 +92,7 @@ export default (props)=>{
             }}
           >
             <span 
-              style={{fontSize: styles.desktop?"0.8vw":"0.6rem", width:styles.vertical?'100%':'50%'}}
+              style={{fontSize: styles.desktop?"0.8vw":"0.6rem", width:styles.vertical?'100%':'50%', padding: styles.vertical?'0 10vw':'unset'}}
               className={styles.classes.hoverText}
             >
               Автоматична перевірка проекту на відповідність будівельним нормам у програмному пакеті Autodesk Revit
