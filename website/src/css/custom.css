@@ -9,22 +9,30 @@
 
 
 /* You can override the default Infima variables here. */
-.footer.footer--dark {
+/* .footer.footer--dark {
   --ifm-footer-background-color: #0e1230;
   background-color: #0e1230;
 }
 
+.footer.footer--light {
+  --ifm-footer-background-color: #aaa;
+  background-color: #aaa;
+} */
+
 :root {
     --ifm-color-primary: hsl(217, 40%, 61%);
-    --ifm-color-primary-dark: #1d68e1;
-    --ifm-color-primary-darker: #1b62d4;
-    --ifm-color-primary-darkest: #1751af;
+    --ifm-color-primary-dark: #3f4857;
+    --ifm-color-primary-darker: #12173e;
+    --ifm-color-primary-darkest: #0e1230;
     --ifm-color-primary-light: #4e89e8;
     --ifm-color-primary-lighter: #5a91ea;
     --ifm-color-primary-lightest: #80aaef;
     --ifm-code-font-size: 95%;
     font-size: 1em;
+    /* background: linear-gradient(#3f4857, #12173e);
+    background-size: 'contain'; */
 }
+
 
 .docusaurus-highlight-code-line {
     background-color: rgb(72, 77, 91);

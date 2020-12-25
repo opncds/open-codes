@@ -4,7 +4,7 @@ import { animated } from 'react-spring'
 import laptopImage from './../../../assets/img/laptop.png'
 
 const Text = ({desktop, vertical, classes})=><>
-  <p style={{lineHeight:"45px"}}>
+  <p style={{lineHeight:desktop?"5vw":"2.5rem"}}>
     <span style={{
       fontSize:"3.5rem",
       fontSize: desktop?"5vw":"2.5rem",
@@ -12,7 +12,8 @@ const Text = ({desktop, vertical, classes})=><>
       fontStyle: 'normal',
       textDecoration: 'none', 
       textTransform: 'none',
-      display:'block'
+      display:'block',
+      whiteSpace: 'nowrap'
     }}>
       Рішення 2.0
     </span>

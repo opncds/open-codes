@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from './blocks/Hero'
 import Problem from './blocks/Problem'
 import Context from './blocks/Context'
 import Solution1 from './blocks/Solution1'
 import Solution2 from './blocks/Solution2'
 import Auditorium from './blocks/Auditorium'
-
 import SlideOverflow from './slideOverflow'
+import useThemeContext from '@theme/hooks/useThemeContext';
 
 export default ()=>{
-
+  const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
+  // useEffect(()=>{
+  //   // fetch('https://spatialtech.herokuapp.com/http://museum.kpi.ua/map/tiles//1943-09-26.DE.LW/?z=11&x=1197&y=690')
+  //   fetch('https://spatialtech.herokuapp.com/https://tileserver.lunstatic.net/rpc/index.json')
+  //   .then(t=>t.json())
+  //   .then(t=>console.log(t))
+  // })//https://tileserver.lunstatic.net/rpc/public.lun_source.json
   return (
     <main 
       style={{ 
-        background:'linear-gradient(#3f4857, #12173e)', 
-        zIndex:0, 
-        backgroundSize: 'cover' 
+        background:isDarkTheme?'linear-gradient(#3f4857, #12173e)':'linear-gradient(#fefefe, #bacff7)', 
+        zIndex:0
       }}
     >
       <SlideOverflow>

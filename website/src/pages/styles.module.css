@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 html *
 {
-   color: #fff;
+   /* color: #fff; */
    /* font-family: Montserrat, sans-serif !important; */
    scroll-behavior: smooth;
 }

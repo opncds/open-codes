@@ -3,7 +3,7 @@ import Block from './block'
 import problemImage from './../../../assets/img/book.png'
 
 const Text = ({desktop, vertical})=><>
-  <p style={{lineHeight:"45px", paddingTop:'3rem'}}>
+  <p style={{lineHeight:desktop?"5vw":"2.5rem", paddingTop:'3rem'}}>
     <span style={{
       fontSize:"3.5rem",
       fontSize: desktop?"5vw":"2.5rem",
@@ -11,7 +11,8 @@ const Text = ({desktop, vertical})=><>
       fontStyle: 'normal',
       textDecoration: 'none', 
       textTransform: 'none',
-      display:'block'
+      display:'block',
+      whiteSpace: 'nowrap'
     }}>
       Проблема
     </span>
