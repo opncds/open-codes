@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 
 export default ({ text, text2, image, alignRight, active, isCurrent, visible })=>{
   const desktop = useMediaQuery('(min-width:900px)');
-  const vertical = useMediaQuery('(max-width:600px)');
+  const vertical = window.innerWidth<window.innerHeight;
   const classes = useStyles()
   const [mouseOver, setMouseOver] = useState(false)
   const [inCenter, setInCenter] = useState(false)
