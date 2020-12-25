@@ -1,6 +1,7 @@
 import React from 'react';
 import Block from './block'
 import { animated } from 'react-spring'
+import laptopImage from './../../../assets/img/laptop.png'
 
 const Text = ({desktop, vertical, classes})=><>
   <p style={{lineHeight:"45px"}}>
@@ -62,14 +63,8 @@ export default (props)=>{
           style={{
             position:'relative', 
             minWidth:'50vw', 
-            // minHeight: styles.vertical?'30vh':'100vh',
             transform: styles.vertical?'translate(0px,0px)':'translate(5vw,0px)',
-            // overflow:'hidden',
-            // backgroundImage: 'url(static/img/upload-d615192a-93cf-42a7-b8ec-beaa2d331b4e.png?w=3617&e=webp)',
-            // backgroundSize: styles.vertical?'120%':'cover',
-            // backgroundRepeat: 'no-repeat',
-            // backgroundPosition: styles.vertical?'center':'50% 50%',
-            display: "flex", // make us of Flexbox
+            display: "flex", 
             alignItems: "center",
             margin: styles.vertical?"0 -10vw":'unset'
 
@@ -77,7 +72,7 @@ export default (props)=>{
         >
           <animated.img 
             style={{width: '100%'}} 
-            src="static/img/upload-cf6d331a-945e-42cf-86ed-33c195f23ac3_s.png" />
+            src={laptopImage} />
           <p 
             style={{
               position:'absolute', 

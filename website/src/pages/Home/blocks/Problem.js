@@ -1,5 +1,6 @@
 import React from 'react';
 import Block from './block'
+import problemImage from './../../../assets/img/book.png'
 
 const Text = ({desktop, vertical})=><>
   <p style={{lineHeight:"45px", paddingTop:'3rem'}}>
@@ -57,7 +58,7 @@ export default (props)=>{
   return (
     <Block 
       alignRight={false}
-      image={styles=><img style={{paddingTop:'3rem'}} src="static/img/upload-ade859bb-86f4-440c-8e42-992dccfec757.png" />}
+      image={styles=><img style={{paddingTop:'3rem'}} src={problemImage} />}
       text={styles=><Text {...{...styles, ...props}}/>}
       {...props}
     />

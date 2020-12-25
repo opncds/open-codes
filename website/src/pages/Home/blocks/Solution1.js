@@ -1,6 +1,8 @@
 import React from 'react';
 import Block from './block'
 import { animated } from 'react-spring'
+import desktopImage from './../../../assets/img/ipad.png'
+import mobileImage from './../../../assets/img/mobile.png'
 
 const Text = ({desktop, vertical, classes})=><>
   <p style={{lineHeight:"45px"}}>
@@ -62,13 +64,7 @@ export default (props)=>{
           style={{
             position:'relative', 
             minWidth:'50vw', 
-            // minHeight: styles.vertical?'30vh':'100vh',
             transform:styles.vertical?'translate(0vw,0px)':'translate(5vw,0px)',
-            // overflow:'hidden',
-            // backgroundImage: 'url(static/img/upload-cf6d331a-945e-42cf-86ed-33c195f23ac3.png?w=3617&e=webp)',
-            // backgroundSize: styles.vertical?'120%':'cover',
-            // backgroundRepeat: 'no-repeat',
-            // backgroundPosition: styles.vertical?'calc(50% + 10vw) 50%':'50% 50%',
             display: "flex", // make us of Flexbox
             alignItems: "center",
             margin: styles.vertical?"0 -10vw":'unset'
@@ -76,7 +72,7 @@ export default (props)=>{
         >
           <animated.img 
             style={{width: '100%'}} 
-            src="static/img/upload-cf6d331a-945e-42cf-86ed-33c195f23ac3.png" />
+            src={desktopImage} />
           <animated.img 
             style={{
               position:'absolute', 
@@ -85,7 +81,7 @@ export default (props)=>{
               left:'4vw', 
               width: '25%', 
               transform: styles.translateY.interpolate(v=>`translate(0px,${v*1.75}px)`)}} 
-            src="static/img/upload-c4071306-eb46-4c11-83aa-552e88a9c8fe.png" />
+            src={mobileImage} />
           <p 
             style={{
               position:'absolute', 

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from "@material-ui/core/styles";
+import cstImage from "./../../../assets/img/cst.jpg"
 
 const useStyles = makeStyles(theme => ({
   spinningLogo: {
@@ -50,7 +51,7 @@ export default ()=>{
         }}
       >
         <a href="http://spatialtech.info/" className={classes.scaleLogo}>
-          <img className={classes.spinningLogo} src="static/img/upload-b6002df0-62cc-49c5-98ec-eb064d633ed5.jpg" />
+          <img className={classes.spinningLogo} src={cstImage} />
         </a>
       </div>
       <div 

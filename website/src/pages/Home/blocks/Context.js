@@ -1,5 +1,6 @@
 import React from 'react';
 import Block from './block'
+import contextImage from "../../../assets/img/reform.png"
 
 const Text = ({desktop, vertical, classes})=><>
   <p style={{lineHeight:"45px"}}>
@@ -76,7 +77,7 @@ const Text = ({desktop, vertical, classes})=><>
 export default (props)=>{
   return (
     <Block 
-      image={styles=><img src="static/img/upload-35973784-d1bf-4d3d-903b-083ceb9bc2fc.png" />} 
+      image={styles=><img src={contextImage} />} 
       text={styles=><Text {...{...styles, ...props}}/>}
       {...props}
     />
