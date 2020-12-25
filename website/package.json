@@ -13,10 +13,15 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.66",
     "@docusaurus/preset-classic": "2.0.0-alpha.66",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/styles": "^4.11.2",
     "@mdx-js/react": "^1.5.8",
+    "@rooks/use-visibility-sensor": "^4.5.0",
     "clsx": "^1.1.1",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-spring": "^8.0.27",
+    "react-waypoint": "^9.0.3"
   },
   "browserslist": {
     "production": [

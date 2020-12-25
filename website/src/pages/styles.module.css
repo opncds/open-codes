@@ -1,6 +1,18 @@
 /* stylelint-disable docusaurus/copyright-header */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+html *
+{
+   color: #fff;
+   /* font-family: Montserrat, sans-serif !important; */
+   scroll-behavior: smooth;
+}
 
-
+/* ::-webkit-scrollbar {
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 0px;  
+  background: transparent;  
+} */
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
@@ -18,6 +30,7 @@
         padding: 2rem;
     }
 }
+
 
 .buttons {
     display: flex;
