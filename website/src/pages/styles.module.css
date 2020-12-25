@@ -3,7 +3,7 @@
 html *
 {
    color: #fff;
-   font-family: Montserrat, sans-serif !important;
+   /* font-family: Montserrat, sans-serif !important; */
    scroll-behavior: smooth;
 }
 

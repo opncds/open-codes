@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from "@material-ui/core/styles";
 
