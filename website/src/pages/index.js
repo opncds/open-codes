@@ -7,16 +7,20 @@ import './styles.module.css'
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 const Components = () => {
-  const {isDarkTheme} = useThemeContext();
+  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
+  useEffect(()=>{
+    if(isDarkTheme){
+      setDarkTheme()
+    }else{
+      setLightTheme()
+    }
+  },[isDarkTheme, setDarkTheme, setLightTheme])
   return <Home {...{isDarkTheme}} />
 }; 
 
 export default ()=>{
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  useEffect(()=>{
-    console.log(context, siteConfig)
-  },[context])
 
   return (
     <Layout
