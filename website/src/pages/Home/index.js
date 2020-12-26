@@ -23,7 +23,7 @@ export default ({ isDarkTheme })=>{
       }}
     >
       <SlideOverflow>
-        {props=><Hero {...props, isDarkTheme} />}
+        {props=><Hero {...{...props, isDarkTheme}} />}
         {props=><>
           <Problem {...props} />
           <Context alignRight={true} {...props} />
