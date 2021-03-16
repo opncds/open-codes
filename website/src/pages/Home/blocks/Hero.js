@@ -20,12 +20,13 @@ export default ({ active, isCurrent, isDarkTheme })=>{
       {...{ref}}
       style={{
         // backgroundImage: `url(${heroImage})` ,
-        background: isDarkTheme?`linear-gradient(300deg, rgba(5,5,10,0.8), rgba(15,22,30,0) 100%),
+        background: (isDarkTheme?`linear-gradient(300deg, rgba(5,5,10,0.8), rgba(15,22,30,0) 100%),
             linear-gradient(127deg, rgba(15,22,30,0.8), rgba(5,5,10,0) 100%),
             linear-gradient(336deg, rgba(25,30,35,0.8), rgba(25,30,35,0) 100%), rgb(120,120,120)`:
-            `linear-gradient(to right top, #7182cf, #788dd8, #7f98e1, #86a3ea, #8eaef3, #8bb8f6, #8ac1f8, #8dcaf9, #90d2f1, #9cd8e9, #addce2, #bfe0de), rgb(250,250,250)`,
-        backgroundSize: vertical?'auto 100%':'cover',
-        backgroundPosition: props.backgroundPosition,
+            `linear-gradient(to right top, #7182cf, #788dd8, #7f98e1, #86a3ea, #8eaef3, #8bb8f6, #8ac1f8, #8dcaf9, #90d2f1, #9cd8e9, #addce2, #bfe0de), rgb(250,250,250)`) +
+            props.backgroundPosition + '/' + (vertical?'auto 100%':'cover'),
+        // backgroundSize: vertical?'auto 100%':'cover',
+        // backgroundPosition: props.backgroundPosition,
         minHeight: 'calc( 100vh - 60px )',
         // minWidth: '100vw',
         // height: '100vh',

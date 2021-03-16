@@ -70,7 +70,7 @@ export default ({ children }) => {
                 }
               },[ref.current])
         
-              return (<>
+              return (<React.Fragment key={index}>
                 <Waypoint 
                   topOffset={60} 
                   bottomOffset={60} 
@@ -86,7 +86,7 @@ export default ({ children }) => {
                     {content({ active:true, isCurrent, visible})}
                   </div>
                 </Waypoint>
-              </>)})
+              </React.Fragment>)})
           }</div>
       </>
   )
